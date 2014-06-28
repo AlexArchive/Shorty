@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="Shorty">
+<head>
+    <title>Shorty</title>
+    
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+
+</head>
+    <body data-ng-controller="shortenerController">
+        
+        <form>
+            <label>Long URL:</label>
+            <input type="text" data-ng-model="longUrl" />
+            <button type="submit" data-ng-click="shorten(longUrl)">Shorten</button>
+        </form>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/controllers/shortenerController.js"></script>
+    </body>
+</html>
