@@ -2,9 +2,10 @@
 
 namespace Shorty.Models
 {
-    public class LongUrl
+    public class LongUrlModel
     {
         [Required]
-        public string UrlToShorten { get; set; } 
+        [RegularExpression(@"^http(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$", ErrorMessage = "Invalid Url.")]
+        public string LongUrl { get; set; } 
     }
 }

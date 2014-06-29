@@ -12,10 +12,12 @@
 </head>
     <body data-ng-controller="shortenerController">
         
-        <form>
+        <form name="form" novalidate>
             <label>Long URL:</label>
-            <input type="text" data-ng-model="longUrl" />
-            <button type="submit" data-ng-click="shorten(longUrl)">Shorten</button>
+            <input type="url" data-ng-model="longUrl" required />
+            <button type="submit" ng-disabled="!form.$valid" data-ng-click="shorten(longUrl)">
+                Shorten
+            </button>
         </form>
 
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
